@@ -1,2 +1,11 @@
-# homework3
-Testing is the process of running a program to try and ascertain whether it works as intended. The purpose of testing is to show that bugs exist, not to show that a program is bug-free.  Debugging is the process of trying to fix a program that you already know does not work as intended.
+## CSC 510 Homework 3
+
+## Team 3
+
+This repository and its contents is our team's submission for Homework 3. 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<img alt="Platform: Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> <!-- Platform-Linux -->
+![GitHub last commit](https://img.shields.io/github/last-commit/ncsu-csc-510/git-homework2)
+![GitHub issues](https://img.shields.io/github/issues/ncsu-csc-510/git-homework2)
+![GitHub forks](https://img.shields.io/github/forks/ncsu-csc-510/git-homework2)
