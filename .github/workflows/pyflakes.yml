@@ -29,12 +29,24 @@ jobs:
 
       - name: Run Pyflakes and Save Output
         run: |
-          pyflakes hw2_debugging.py rand.py counting_sort.py | tee pyflakes_report.txt || true
-          pyflakes hw2_debugging.py binary_search.py --output-format=colorized | tee binary_search_pylint_report.txt || true
+          pyflakes hw2_debugging.py rand.py counting_sort.py > counting_sort_pyflakes_report.txt || true
+          pyflakes hw2_debugging.py binary_search.py > binary_search_pyflakes_report.txt || true
+          pyflakes hw2_debugging.py bubble_sort.py > bubble_sort_pyflakes_report.txt || true
 
-
-      - name: Upload Pyflakes Report
+      - name: Upload Pyflakes Report (Counting Sort)
         uses: actions/upload-artifact@v4
         with:
-          name: pyflakes-report
-          path: pyflakes_report.txt
+          name: pyflakes-report-counting_sort
+          path: counting_sort_pyflakes_report.txt
+
+      - name: Upload Pyflakes Report (Binary Search)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyflakes-report-binary_search
+          path: binary_search_pyflakes_report.txt
+
+      - name: Upload Pyflakes Report (Bubble Sort)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyflakes-report-bubble_sort
+          path: bubble_sort_pyflakes_report.txt

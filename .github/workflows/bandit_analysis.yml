@@ -28,13 +28,24 @@ jobs:
 
     - name: Run Bandit analysis
       run: |
-        bandit -r hw2_debugging.py rand.py > bandit_report.txt || true
-        bandit -r hw2_debugging.py > test_bandit_report.txt || true
+        bandit -r hw2_debugging.py rand.py counting_sort.py > counting_sort_bandit_report.txt || true
+        bandit -r hw2_debugging.py rand.py binary_search.py > binary_search_bandit_report.txt || true
+        bandit -r hw2_debugging.py rand.py bubble_sort.py > bubble_sort_bandit_report.txt || true
 
-    - name: Upload Bandit report as artifact
+    - name: Upload Bandit report (Counting Sort)
       uses: actions/upload-artifact@v4
       with:
-        name: bandit-report
-        path: |
-          bandit_report.txt
-          test_bandit_report.txt
+        name: bandit-report-counting_sort
+        path: counting_sort_bandit_report.txt
+
+    - name: Upload Bandit report (Binary Search)
+      uses: actions/upload-artifact@v4
+      with:
+        name: bandit-report-binary_search
+        path: binary_search_bandit_report.txt
+
+    - name: Upload Bandit report (Bubble Sort)
+      uses: actions/upload-artifact@v4
+      with:
+        name: bandit-report-bubble_sort
+        path: bubble_sort_bandit_report.txt
