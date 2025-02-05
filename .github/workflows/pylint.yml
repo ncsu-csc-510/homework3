@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Pylint and Save Output
         run: |
-          pylint hw2_debugging.py rand.py --output-format=colorized | tee pylint_report.txt || true
+          pylint hw2_debugging.py rand.py counting_sort.py --output-format=colorized | tee pylint_report.txt || true
 
       - name: Upload Pylint Report
         uses: actions/upload-artifact@v4
