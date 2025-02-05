@@ -1,0 +1,35 @@
+name: Bandit Security Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  bandit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12.8' 
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install bandit
+
+    - name: Run Bandit analysis
+      run: bandit -r hw2_debugging.py rand.py > bandit_report.txt
+
+    - name: Upload Bandit report as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: bandit-report
+        path: bandit_report.txt
