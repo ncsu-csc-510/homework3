@@ -1,53 +1,79 @@
+"""Module providing functions to implement merge and bubble sort."""
+
 import rand
 
-def mergeSort(arr):
-    if (len(arr) == 1):
-        return arr
+def merge_sort(input_arr):
+    """
+    Performing merge sort.
 
-    half = len(arr)//2
+    Args:
+        input_arr (list): numbers to be sorted
 
-    return recombine(mergeSort(arr[:half]), mergeSort(arr[half:]))
+    Returns:
+        list: sorted list
+    """
+    if len(input_arr) == 1:
+        return input_arr
+    half = len(input_arr) // 2
 
-def recombine(leftArr, rightArr):
-    leftIndex = 0
-    rightIndex = 0
-    mergeArr = [None] * (len(leftArr) + len(rightArr))
-    while leftIndex < len(leftArr) and rightIndex < len(rightArr):
-        if leftArr[leftIndex] < rightArr[rightIndex]:
-            rightIndex += 1
-            mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
+    return recombine(merge_sort(input_arr[:half]), merge_sort(input_arr[half:]))
+
+
+def recombine(left_arr, right_arr):
+    """
+    Merging the two sorted arrays into a single sorted array.
+
+    Args:
+        left_arr (list): sorting the left half
+        right_arr (list): sorting the right half
+
+    Returns:
+        list: Merged sorted array.
+    """
+
+    left_index = 0
+    right_index = 0
+    merged_arr = []
+
+    while left_index < len(left_arr) and right_index < len(right_arr):
+        if left_arr[left_index] < right_arr[right_index]:
+            merged_arr.append(left_arr[left_index])
+            left_index += 1
         else:
-            leftIndex += 1
-            mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
+            merged_arr.append(right_arr[right_index])
+            right_index += 1
 
-    for i in range(rightIndex, len(rightArr)):
-        mergeArr[leftIndex + rightIndex] = rightArr[i]
-    
-    for i in range(leftIndex, len(leftArr)):
-        mergeArr[leftIndex + rightIndex] = leftArr[i]
+    merged_arr.extend(left_arr[left_index:])
+    merged_arr.extend(right_arr[right_index:])
 
-    return mergeArr
+    return merged_arr
 
-arr = rand.random_array([None] * 20)
-arr_out = mergeSort(arr)
+# Example Usage
+array = rand.random_array([None] * 20)
+array_out = merge_sort(array)
 
-print(arr_out)
+print(array_out)
 
-# faulty bubble sort implementation
+def bubble_sort(input_arr):
+    """
+    Performing bubble sort on the input array.
 
-def bubbleSort(arr):
-    n = len(arr)
+    Args:
+        input_arr (list): List of numbers to be sorted.
+
+    Returns:
+        list: Sorted list.
+    """
+    n = len(input_arr)
     for i in range(n):
-        for j in range(n):  
-            if arr[j] > arr[j + 1]:  
-                temp = arr[j]  
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp  
+        for j in range(n - i - 1):
+            if input_arr[j] > input_arr[j + 1]:
+                input_arr[j], input_arr[j + 1] = input_arr[j + 1], input_arr[j]
 
-    return arr  
+    return input_arr
 
 # Example usage
-arr_bubble = rand.random_array([None] * 20)
-arr_out_bubble = bubbleSort(arr_bubble)
+array_bubble = rand.random_array([None] * 20)
+array_out_bubble = bubble_sort(array_bubble)
 
-print(arr_out_bubble)
+print(array_out_bubble)
