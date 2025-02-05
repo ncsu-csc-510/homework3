@@ -1,0 +1,15 @@
+[7;33m************* Module binary_search[0m
+binary_search.py:1:0: C0303: [1mTrailing whitespace[0m ([1mtrailing-whitespace[0m)
+binary_search.py:24:0: C0304: [1mFinal newline missing[0m ([1mmissing-final-newline[0m)
+binary_search.py:1:0: C0114: [1mMissing module docstring[0m ([1mmissing-module-docstring[0m)
+binary_search.py:2:0: C0116: [1mMissing function or method docstring[0m ([1mmissing-function-docstring[0m)
+binary_search.py:2:0: C0103: [1mFunction name "binarySearch" doesn't conform to snake_case naming style[0m ([1minvalid-name[0m)
+binary_search.py:2:17: W0621: [35mRedefining name 'array' from outer scope (line 16)[0m ([35mredefined-outer-name[0m)
+binary_search.py:2:24: W0621: [35mRedefining name 'x' from outer scope (line 17)[0m ([35mredefined-outer-name[0m)
+binary_search.py:7:8: R1705: [1;3;35mUnnecessary "elif" after "return", remove the leading "el" from "elif"[0m ([1;3;35mno-else-return[0m)
+binary_search.py:17:0: C0103: [1mConstant name "x" doesn't conform to UPPER_CASE naming style[0m ([1minvalid-name[0m)
+binary_search.py:19:0: C0103: [1mConstant name "result" doesn't conform to UPPER_CASE naming style[0m ([1minvalid-name[0m)
+
+-----------------------------------
+Your code has been rated at 7.78/10
+
