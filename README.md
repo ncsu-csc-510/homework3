@@ -22,3 +22,29 @@ This repository and its contents is our team's submission for Homework 3.
 - [x] akulka24- Bubble Sort
 - [x] avenugo3- Binary Search
 - [x] akakadi- Counting Sort
+
+<br>
+
+```
+akulka24
+
+pylint hw2_debugging.py rand.py
+pyflakes hw2_debugging.py rand.py
+bandit hw2_debugging.py rand.py
+```
+
+```
+avenugo3
+
+pylint hw2_debugging.py rand.py binary_search.py
+pyflakes hw2_debugging.py rand.py binary_search.py
+bandit hw2_debugging.py rand.py binary_search.py
+```
+
+```
+akakadi
+
+pylint hw2_debugging.py rand.py counting_sort.py
+pyflakes hw2_debugging.py rand.py counting_sort.py
+bandit hw2_debugging.py rand.py counting_sort.py
+```
