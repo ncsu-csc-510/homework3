@@ -29,7 +29,7 @@ jobs:
       run: bandit -r hw2_debugging.py rand.py > bandit_report.txt
 
     - name: Upload Bandit report as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: bandit-report
         path: bandit_report.txt
