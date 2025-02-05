@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - akulka24
   pull_request:
     branches:
       - main
@@ -29,11 +30,24 @@ jobs:
 
       - name: Run Pylint and Save Output
         run: |
-          pylint hw2_debugging.py rand.py counting_sort.py --output-format=colorized | tee pylint_report.txt || true
-          pylint hw2_debugging.py binary_search.py --output-format=colorized | tee binary_search_pylint_report.txt || true
+          pylint hw2_debugging.py rand.py counting_sort.py --output-format=colorized > counting_sort_pylint_report.txt || true
+          pylint hw2_debugging.py rand.py binary_search.py --output-format=colorized > binary_search_pylint_report.txt || true
+          pylint hw2_debugging.py rand.py --output-format=colorized > bubble_sort_pylint_report.txt || true
 
-      - name: Upload Pylint Report
+      - name: Upload Pylint Report (Counting Sort)
         uses: actions/upload-artifact@v4
         with:
-          name: pylint-report
-          path: pylint_report.txt
+          name: pylint-report-counting_sort
+          path: counting_sort_pylint_report.txt
+
+      - name: Upload Pylint Report (Binary Search)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pylint-report-binary_search
+          path: binary_search_pylint_report.txt
+
+      - name: Upload Pylint Report (Bubble Sort)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pylint-report-bubble_sort
+          path: bubble_sort_pylint_report.txt

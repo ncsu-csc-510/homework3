@@ -1,9 +1,18 @@
-"""Module for generating a random array using the `secrets` module."""
+"""Module for generating a random array."""
 
-import secrets
+import random
 
 def random_array(arr):
-    """Fills an array with secure random numbers between 1 and 20."""
+    """
+    Generates a random array using a secure random generator.
+
+    Args:
+        arr (list): List to be filled with 20 random numbers.
+
+    Returns:
+        list: List filled with random numbers.
+    """
+    secure_random = random.SystemRandom()
     for i, _ in enumerate(arr):
-        arr[i] = secrets.randbelow(20) + 1
+        arr[i] = secure_random.randint(1, 20)
     return arr
