@@ -27,10 +27,14 @@ jobs:
         pip install bandit
 
     - name: Run Bandit analysis
-      run: bandit -r hw2_debugging.py rand.py > bandit_report.txt || true
+      run: |
+        bandit -r hw2_debugging.py rand.py > bandit_report.txt || true
+        bandit -r hw2_debugging.py > test_bandit_report.txt || true
 
     - name: Upload Bandit report as artifact
       uses: actions/upload-artifact@v4
       with:
         name: bandit-report
-        path: bandit_report.txt
+        path: |
+          bandit_report.txt
+          test_bandit_report.txt
