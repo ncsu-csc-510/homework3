@@ -33,4 +33,21 @@ arr_out = mergeSort(arr)
 
 print(arr_out)
 
+# faulty bubble sort implementation
 
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(n):  
+            if arr[j] > arr[j + 1]:  
+                temp = arr[j]  
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp  
+
+    return arr  
+
+# Example usage
+arr_bubble = rand.random_array([None] * 20)
+arr_out_bubble = bubbleSort(arr_bubble)
+
+print(arr_out_bubble)
