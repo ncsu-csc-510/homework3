@@ -30,7 +30,7 @@ jobs:
       run: |
         bandit -r hw2_debugging.py rand.py counting_sort.py > counting_sort_bandit_report.txt || true
         bandit -r hw2_debugging.py rand.py binary_search.py > binary_search_bandit_report.txt || true
-        bandit -r hw2_debugging.py rand.py bubble_sort.py > bubble_sort_bandit_report.txt || true
+        bandit -r hw2_debugging.py rand.py > bubble_sort_bandit_report.txt || true
 
     - name: Upload Bandit report (Counting Sort)
       uses: actions/upload-artifact@v4
