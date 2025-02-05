@@ -22,3 +22,9 @@ def test_merge_sort():
 
     # Testing case when input array is empty
     assert hw2_debugging.merge_sort([]) == []
+
+    # Testing case when the input array has only one element
+    assert hw2_debugging.merge_sort([42]) == [42]
+
+    # Testing case with a mix of integers and floating-point numbers
+    assert hw2_debugging.merge_sort([3.2, 1.5, 4.8, 2.1, 0.5, 3, 2, 1]) == [0.5, 1, 1.5, 2, 2.1, 3, 3.2, 4.8]
