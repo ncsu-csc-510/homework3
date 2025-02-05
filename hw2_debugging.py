@@ -12,8 +12,9 @@ def merge_sort(input_arr):
     Returns:
         list: sorted list
     """
-    if len(input_arr) == 1:
+    if len(input_arr) <= 1:
         return input_arr
+
     half = len(input_arr) // 2
 
     return recombine(merge_sort(input_arr[:half]), merge_sort(input_arr[half:]))
