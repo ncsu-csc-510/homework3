@@ -1,8 +1,9 @@
-import subprocess
+"""Module for generating a random array using the `secrets` module."""
+
+import secrets
 
 def random_array(arr):
-    shuffled_num = None
-    for i in range(len(arr)):
-        shuffled_num = subprocess.run(["shuf", "-i1-20", "-n1"], capture_output=True)
-        arr[i] = int(shuffled_num.stdout)
+    """Fills an array with secure random numbers between 1 and 20."""
+    for i, _ in enumerate(arr):
+        arr[i] = secrets.randbelow(20) + 1
     return arr
