@@ -23,7 +23,7 @@ This repository and its contents is our team's submission for Homework 3.
 - [x] avenugo3- Binary Search
 - [x] akakadi- Counting Sort
 
-<br>
+NOTE: Each one of the workflows setup for each of the tools generates artifacts in the actions tab.
 
 ```
 akulka24
