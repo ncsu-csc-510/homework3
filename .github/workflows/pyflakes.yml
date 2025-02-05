@@ -29,7 +29,9 @@ jobs:
 
       - name: Run Pyflakes and Save Output
         run: |
-          pyflakes hw2_debugging.py rand.py | tee pyflakes_report.txt || true
+          pyflakes hw2_debugging.py rand.py counting_sort.py | tee pyflakes_report.txt || true
+          pyflakes hw2_debugging.py binary_search.py --output-format=colorized | tee binary_search_pylint_report.txt || true
+
 
       - name: Upload Pyflakes Report
         uses: actions/upload-artifact@v4
